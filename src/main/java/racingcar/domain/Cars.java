@@ -17,10 +17,7 @@ public class Cars {
     }
 
     private static void validateNonDuplicatedNames(final List<Car> cars) {
-        List<String> carNames = cars.stream()
-                .map(Car::getName)
-                .collect(Collectors.toList());
-        if (new HashSet<>(carNames).size() != carNames.size()) {
+        if (new HashSet<>(cars).size() != cars.size()) {
             throw new IllegalArgumentException("중복된 자동차 이름입니다.");
         }
     }
