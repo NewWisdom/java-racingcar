@@ -11,8 +11,7 @@ public class RacingCarUtils {
     }
 
     public static List<Name> splitInputString(final String inputString) {
-        return Arrays.asList(inputString.split(","))
-                .stream()
+        return Arrays.stream(inputString.split(","))
                 .map(Name::new)
                 .collect(Collectors.toList());
     }
