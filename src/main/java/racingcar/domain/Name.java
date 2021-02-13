@@ -16,12 +16,12 @@ public class Name {
     }
 
     private void validateName(final String name) {
-        if (isNullName(name) || isContainInvalidChar(name) || isExceedNameLength(name)) {
+        if (isEmptyName(name) || isContainInvalidChar(name) || isExceedNameLength(name)) {
             throw new IllegalArgumentException("잘못된 자동차 이름입니다.");
         }
     }
 
-    private boolean isNullName(final String name) {
+    private boolean isEmptyName(final String name) {
         return "".equals(name);
     }
 
