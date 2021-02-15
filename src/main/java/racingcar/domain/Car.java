@@ -17,8 +17,8 @@ public class Car implements Comparable<Car> {
         this.position = position;
     }
 
-    public void moveForward(final int randomNumber) {
-        if (isMoveNumber(randomNumber)) {
+    public void moveForward(final int number) {
+        if (isMoveNumber(number)) {
             this.position++;
         }
     }
