@@ -13,20 +13,20 @@ public class Cars {
 
     private Cars(final List<Car> cars) {
         this.cars = new ArrayList<>(cars);
-        validateNonDuplicatedNames(cars);
-    }
-
-    private static void validateNonDuplicatedNames(final List<Car> cars) {
-        if (new HashSet<>(cars).size() != cars.size()) {
-            throw new IllegalArgumentException("중복된 자동차 이름입니다.");
-        }
     }
 
     public static Cars makeFromCarNames(final List<Name> carNames) {
         List<Car> cars = carNames.stream()
                 .map(Car::new)
                 .collect(Collectors.toList());
+        validateNonDuplicatedNames(cars);
         return new Cars(cars);
+    }
+
+    private static void validateNonDuplicatedNames(final List<Car> cars) {
+        if (new HashSet<>(cars).size() != cars.size()) {
+            throw new IllegalArgumentException("중복된 자동차 이름입니다.");
+        }
     }
 
     public List<Car> cars() {
